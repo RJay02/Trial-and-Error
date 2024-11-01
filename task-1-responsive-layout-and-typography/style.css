@@ -40,6 +40,26 @@ nav ul li a{
 
 
 
+/* Album Covers Section */
+.album-covers {
+    margin-bottom: 20px;
+}
+
+.album {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.album img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+
 /* Author Section */
 .author {
     display: flex;
