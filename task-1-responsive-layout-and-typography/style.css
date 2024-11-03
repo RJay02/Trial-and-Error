@@ -1,27 +1,21 @@
 /* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background-color: white;
+    background-color: #e9e9e9;
+    margin: 0;
+    padding: 0;
     color: #333;
-    padding: 12px;
-    line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #e9e9e9;
+    background-color: #d3d3d3;
+    padding: 20px;
     text-align: center;
-    padding: 12px;
 }
 
 header .logo img {
-    width: 60px;
+    width: 80px;
     margin-bottom: 10px;
 }
 
@@ -35,25 +29,23 @@ nav ul {
 nav ul li a {
     color: #000;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
 }
 
 /* Introduction Section */
 .introduction {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .introduction h1 {
-    font-family: 'Protest Guerrilla', sans-serif;
     font-size: 2em;
     margin-bottom: 10px;
-}
-
-.first-paragraph {
-    font-size: 0.95em;
-    color: #555;
-    margin: 0 12px;
 }
 
 /* Content Section */
@@ -62,64 +54,91 @@ nav ul li a {
 }
 
 .content h2 {
-    font-size: 1.2em;
-    margin-bottom: 8px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .content p {
-    font-size: 0.9em;
-    margin-bottom: 10px;
-    color: #444;
-    margin: 0 12px;
+    font-size: 1em;
+    margin-bottom: 15px;
 }
 
 /* Album Covers Section */
 .album-covers {
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
-.album {
+.album-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.album-cover {
+    background-color: #fff;
+    border: 2px solid #000;
+    height: 150px;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
 }
 
-.album img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-/* Author Section */
+/* Author Info */
 .author-info {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .author img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
-.author h2 {
-    font-size: 1.1em;
-    margin-bottom: 8px;
-}
-
 .author p {
-    font-size: 0.85em;
+    font-size: 0.9em;
     color: #555;
-    margin: 0 12px;
 }
 
 /* Footer */
 footer {
-    text-align: center;
     background-color: #14181d;
-    color: white;
-    padding: 12px;
-    margin-top: 20px;
-    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+/* Tablet Screen Styles */
+@media (min-width: 720px) and (max-width: 1024px) {
+    body {
+        padding: 40px;
+        border: 10px solid #b3b3b3;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .introduction h1 {
+        font-size: 2.5em;
+    }
+
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .author img {
+        width: 150px;
+        height: 150px;
+    }
+
+    footer {
+        padding: 30px;
+    }
 }
