@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Teko:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070410;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    background-color: #231651;
+    font-size: 2em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.Search_btn {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    border-radius: 16px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 24px;
+    padding: 16px;
+}
+
+.movie_content {
+    background-color: #231651;
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.movie_content img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #4DCCBD;
+}
+
+.movie_info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie_info p {
+    margin-bottom: 16px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.movie_info button {
+    font-family: 'Teko', sans-serif;
+    border-radius: 16px;
+    font-size: 1.5em;
+    padding: 12px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #4DCCBD;
+    color: #070410;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.movie_info button:hover {
+    background-color: #EEF36A;
+    color: #231651;
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout for desktops */
+        gap: 32px;
+        max-width: 900px;
+    }
+
+    .featured {
+        grid-column: span 2; /* Span across two columns */
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr; /* Text and button in two columns */
+    }
+
+    .featured img {
+        grid-column: 1 / -1; /* Image spans across both columns */
+        width: 100%;
+    }
+
+    .featured_info {
+        grid-column: span 2; /* Text in one column, button in another */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 16px;
+    }
+
+    .featured_info p {
+        grid-column: 1; /* Text in the first column */
+        text-align: left;
+        margin: 0;
+    }
+
+    .featured_info button {
+        grid-column: 2; /* Button in the second column */
+        justify-self: center;
+        margin: 0;
+    }
+
+    .split_layout {
+        grid-template-columns: 1fr 1fr; /* Poster on one column, text and button on the other */
+        align-items: center;
+    }
+
+    .split_layout img {
+        grid-column: 1; /* Image in the first column */
+        width: 100%;
+        height: auto;
+    }
+
+    .split_layout .movie_info {
+        grid-column: 2; /* Text and button in the second column */
+        text-align: left;
+        padding: 16px;
+    }
+}
