@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Teko:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070410;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    background-color: #231651;
+    font-size: 2em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.Search_btn {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    border-radius: 16px;
+}
+
+ul {
+    display: none;
+}
+
+main {
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout for mobile screens */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 0 auto; /* Center the content */
+}
+
+.movie_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure the button stays at the bottom */
+    align-items: center;
+    text-align: center;
+    background-color: #231651; /* Purple background for movie content */
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.movie_content img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #4DCCBD; /* Add separator under the image */
+}
+
+.movie_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1; /* Ensures content stretches to occupy available space */
+    width: 100%;
+    padding: 16px;
+}
+
+.movie_info p {
+    text-align: left;
+    margin-bottom: 16px;
+    flex-grow: 1; /* Allows the paragraph to stretch, aligning the button */
+}
+
+.movie_info button {
+    font-family: 'Teko', sans-serif;
+    border-radius: 16px;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 12px 16px;
+    width: 80%; /* Ensure all buttons have a consistent size */
+    max-width: 200px; /* Optional: Limit the maximum size */
+    margin: 16px 0 0; /* Add margin only at the top */
+    background-color: #4DCCBD; /* Teal background */
+    color: #070410; /* Dark text */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.movie_info button:hover {
+    background-color: #EEF36A; /* Yellow on hover */
+    color: #231651; /* Purple text */
+}
+
+/* Tablet Layout */
+@media (min-width: 720px) {
+    main {
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout for tablets */
+        gap: 24px;
+        padding: 32px;
+    }
+
+    .movie_content {
+        flex-direction: column;
+        justify-content: space-between; /* Align content and button properly */
+        align-items: center;
+        height: 100%; /* Ensures consistent height for movie cards */
+    }
+
+    .movie_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .movie_info button {
+        align-self: center; /* Center the button horizontally */
+        margin-top: auto; /* Push the button to the bottom */
+    }
+}
