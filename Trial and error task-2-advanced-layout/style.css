@@ -30,113 +30,113 @@ nav {
     border-radius: 16px;
 }
 
-ul {
-    display: none;
-}
-
 main {
     display: grid;
-    grid-template-columns: 1fr; /* Single column layout for mobile screens */
-    gap: 24px; /* Space between cards */
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 24px;
     padding: 16px;
 }
 
 .movie_content {
-    display: grid;
-    grid-template-rows: auto 1fr auto; /* Rows for image, text, and button */
-    text-align: center;
-    background-color: #231651; /* Card background */
+    background-color: #231651;
     border-radius: 16px;
     overflow: hidden;
-    padding: 16px;
-    height: 100%; /* Ensures consistent card height */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 .movie_content img {
     width: 100%;
     height: auto;
-    border-bottom: 2px solid #4DCCBD; /* Divider between image and content */
+    border-bottom: 2px solid #4DCCBD;
 }
 
 .movie_info {
-    display: flex;
-    flex-direction: column; /* Stack text and button */
-    justify-content: space-between; /* Ensure consistent spacing */
     padding: 16px;
-    height: 100%; /* Stretch container to match height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .movie_info p {
     margin-bottom: 16px;
     text-align: left;
     line-height: 1.6;
-    flex-grow: 1; /* Stretch text to align properly */
 }
 
 .movie_info button {
     font-family: 'Teko', sans-serif;
     border-radius: 16px;
     font-size: 1.5em;
-    cursor: pointer;
     padding: 12px;
-    margin: 0 auto; /* Center button horizontally */
-    width: 80%; /* Consistent button size */
-    background-color: #4DCCBD; /* Teal background */
-    color: #070410; /* Dark text */
+    width: 80%;
+    margin: 0 auto;
+    background-color: #4DCCBD;
+    color: #070410;
     border: none;
     transition: background-color 0.3s ease;
 }
 
 .movie_info button:hover {
-    background-color: #EEF36A; /* Yellow on hover */
-    color: #231651; /* Purple text */
-}
-
-/* Tablet Layout */
-@media (min-width: 720px) {
-    main {
-        grid-template-columns: repeat(2, 1fr); /* Two-column layout for tablets */
-        gap: 24px;
-        padding: 32px;
-    }
-
-    .movie_content {
-        height: 100%; /* Ensures consistent height for all movie cards */
-        display: grid;
-        grid-template-rows: auto 1fr auto; /* Rows for image, text, and button */
-        align-items: stretch; /* Make sure everything stretches uniformly */
-    }
-
-    .movie_info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%; /* Stretch container to match card height */
-    }
-
-    .movie_info p {
-        flex-grow: 1; /* Ensures text aligns properly across all rows */
-    }
-
-    .movie_info button {
-        align-self: center; /* Center the button horizontally */
-        margin-top: auto; /* Push the button to the bottom */
-    }
+    background-color: #EEF36A;
+    color: #231651;
 }
 
 /* Desktop Layout */
 @media (min-width: 1024px) {
     main {
-        grid-template-columns: repeat(3, 1fr); /* Three-column layout for desktops */
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout for desktops */
         gap: 32px;
-        padding: 32px;
+        max-width: 900px;
+        margin: 0 auto;
     }
 
-    .movie_content {
-        height: auto; /* Flexible height for consistent layout */
+    .featured {
+        grid-column: span 2; /* Span across two columns */
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr; /* Text and button in two columns */
     }
 
-    .movie_info button {
-        width: 80%; /* Consistent button size across layouts */
+    .featured img {
+        grid-column: 1 / -1; /* Image spans across both columns */
+        width: 100%;
+    }
+
+    .featured_info {
+        grid-column: span 2; /* Text in one column, button in another */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 16px;
+    }
+
+    .featured_info p {
+        grid-column: 1; /* Text in the first column */
+        text-align: left;
+        margin: 0;
+    }
+
+    .featured_info button {
+        grid-column: 2; /* Button in the second column */
+        justify-self: center;
+        margin: 0;
+    }
+
+    .split_layout {
+        grid-column: span 2;
+        grid-template-columns: 1fr 1fr; /* Poster on one column, text and button on the other */
+        align-items: center;
+    }
+
+    .split_layout img {
+        grid-column: 1; /* Image in the first column */
+        width: 100%;
+        height: auto;
+    }
+
+    .split_layout .movie_info {
+        grid-column: 2; /* Text and button in the second column */
+        text-align: left;
+        padding: 16px;
     }
 }

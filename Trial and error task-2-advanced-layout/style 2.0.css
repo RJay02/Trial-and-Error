@@ -35,6 +35,8 @@ main {
     grid-template-columns: 1fr; /* Single column for mobile */
     gap: 24px;
     padding: 16px;
+    max-width: 900px;
+    margin: auto 0;
 }
 
 .movie_content {
@@ -51,20 +53,20 @@ main {
     border-bottom: 2px solid #4DCCBD;
 }
 
-.movie_info {
+.movie_content {
     padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.movie_info p {
+.movie_content p {
     margin-bottom: 16px;
     text-align: left;
     line-height: 1.6;
 }
 
-.movie_info button {
+.movie_content button {
     font-family: 'Teko', sans-serif;
     border-radius: 16px;
     font-size: 1.5em;
@@ -77,7 +79,7 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.movie_info button:hover {
+.movie_content button:hover {
     background-color: #EEF36A;
     color: #231651;
 }
@@ -88,20 +90,21 @@ main {
         grid-template-columns: repeat(2, 1fr); /* Two-column layout for desktops */
         gap: 32px;
         max-width: 900px;
+        margin: 0 auto;
     }
 
-    .featured {
+    .movie_content_featured {
         grid-column: span 2; /* Span across two columns */
         grid-template-rows: auto auto;
         grid-template-columns: 1fr 1fr; /* Text and button in two columns */
     }
 
-    .featured img {
+    .movie_content_featured img {
         grid-column: 1 / -1; /* Image spans across both columns */
         width: 100%;
     }
 
-    .featured_info {
+    .movie_content_featured .movie_content{
         grid-column: span 2; /* Text in one column, button in another */
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -109,19 +112,21 @@ main {
         padding: 16px;
     }
 
-    .featured_info p {
+    .movie_content_featured .movie_content p {
         grid-column: 1; /* Text in the first column */
         text-align: left;
         margin: 0;
     }
 
-    .featured_info button {
+    .movie_content_featured .movie_content button {
         grid-column: 2; /* Button in the second column */
         justify-self: center;
         margin: 0;
     }
 
     .split_layout {
+        display: grid;
+        grid-column: span 2;
         grid-template-columns: 1fr 1fr; /* Poster on one column, text and button on the other */
         align-items: center;
     }
@@ -132,9 +137,17 @@ main {
         height: auto;
     }
 
-    .split_layout .movie_info {
+    .split_layout p {
+        grid-column: 2; /* Text and button in the second column */
+        text-align: left;
+        padding: 16px;
+    }
+
+    .split_layout button {
         grid-column: 2; /* Text and button in the second column */
         text-align: left;
         padding: 16px;
     }
 }
+
+
