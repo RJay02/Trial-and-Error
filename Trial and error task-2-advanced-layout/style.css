@@ -14,7 +14,7 @@ body {
 
 header {
     background-color: #231651;
-    font-size: 2em;
+    /* font-size: 2em; */
 }
 
 nav {
@@ -26,7 +26,7 @@ nav {
 
 .Search_btn {
     font-family: 'Teko', sans-serif;
-    font-size: 2em;
+    font-size:1.5em;
     border-radius: 16px;
 }
 
@@ -67,7 +67,7 @@ main {
 .movie_info button {
     font-family: 'Teko', sans-serif;
     border-radius: 16px;
-    font-size: 1.5em;
+    font-size: 2em;
     padding: 12px;
     width: 80%;
     margin: 0 auto;

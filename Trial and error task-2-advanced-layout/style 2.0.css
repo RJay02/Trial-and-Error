@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Teko:wght@300..700&display=swap');
 
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,147 +8,146 @@
 }
 
 body {
-    background-color: #070410;
+    background-color: #231651;
     color: #FFFFFF;
     font-family: 'Lato', sans-serif;
 }
 
+/* Header Styling */
 header {
-    background-color: #231651;
-    font-size: 2em;
-}
-
-nav {
+    background-color: #070410;
+    padding: 16px; /* Consistent padding for the header */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
 }
 
-.Search_btn {
+header .logo {
     font-family: 'Teko', sans-serif;
     font-size: 2em;
-    border-radius: 16px;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 24px;
-    padding: 16px;
-    max-width: 900px;
-    margin: auto 0;
-}
-
-.movie_content {
-    background-color: #231651;
-    border-radius: 16px;
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-
-.movie_content img {
-    width: 100%;
-    height: auto;
-    border-bottom: 2px solid #4DCCBD;
-}
-
-.movie_content {
-    padding: 16px;
+/* Navigation Menu */
+nav {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    gap: 16px; /* Apply consistent gap between navigation items */
 }
 
-.movie_content p {
-    margin-bottom: 16px;
-    text-align: left;
-    line-height: 1.6;
+ul {
+    display: none; /* Hidden by default for mobile */
+    list-style: none; /* No bullet points */
 }
 
-.movie_content button {
+ul li a {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #4DCCBD;
+}
+
+/* Search Button */
+.Search_btn {
     font-family: 'Teko', sans-serif;
+    font-size: 2rem; /* Fixed font size based on root (32px) */
     border-radius: 16px;
-    font-size: 1.5em;
-    padding: 12px;
-    width: 80%;
-    margin: 0 auto;
+    padding: 0px 16px;
     background-color: #4DCCBD;
     color: #070410;
     border: none;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.movie_content button:hover {
+.Search_btn:hover {
     background-color: #EEF36A;
     color: #231651;
 }
 
-/* Desktop Layout */
-@media (min-width: 1024px) {
+/* Main Container */
+main {
+    /* padding: 16px; */
+    display: grid;
+    grid-template-columns: 1fr; /* Single-column layout for mobile screens */
+    gap: 16px; /* Consistent spacing between elements */
+    max-width: 900px;
+    margin: 0 auto; /* Center the content */
+}
+
+/* Movie Container */
+.movie_container {
+    display: flex; /* Flex layout to align items inside */
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(145deg, #231651, #070410);
+    border: 1px solid #4DCCBD;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3), 0px -2px 4px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Consistent padding inside the movie container */
+    /* padding: 16px; */
+    gap: 16px; /* Spacing between content inside the movie container */
+}
+
+.movie_container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5), 0px -4px 6px rgba(255, 255, 255, 0.2);
+}
+
+.movie_container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.movie_container p {
+    text-align: left;
+}
+
+.movie_container button {
+    font-family: 'Teko', sans-serif;
+    border-radius: 16px;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #4DCCBD;
+    transition: background-color 0.3s ease;
+}
+
+.movie_container button:hover {
+    background-color: #EEF36A;
+    color: #231651;
+}
+
+/* Media Queries */
+@media (min-width: 720px) {
+    nav {
+        gap: 24px; /* Increase gap for larger screens */
+    }
+
+    ul {
+        display: flex;
+        gap: 16px; /* Consistent spacing between list items */
+    }
+
     main {
-        grid-template-columns: repeat(2, 1fr); /* Two-column layout for desktops */
-        gap: 32px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .movie_content_featured {
-        grid-column: span 2; /* Span across two columns */
-        grid-template-rows: auto auto;
-        grid-template-columns: 1fr 1fr; /* Text and button in two columns */
-    }
-
-    .movie_content_featured img {
-        grid-column: 1 / -1; /* Image spans across both columns */
-        width: 100%;
-    }
-
-    .movie_content_featured .movie_content{
-        grid-column: span 2; /* Text in one column, button in another */
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        padding: 16px;
-    }
-
-    .movie_content_featured .movie_content p {
-        grid-column: 1; /* Text in the first column */
-        text-align: left;
-        margin: 0;
-    }
-
-    .movie_content_featured .movie_content button {
-        grid-column: 2; /* Button in the second column */
-        justify-self: center;
-        margin: 0;
-    }
-
-    .split_layout {
-        display: grid;
-        grid-column: span 2;
-        grid-template-columns: 1fr 1fr; /* Poster on one column, text and button on the other */
-        align-items: center;
-    }
-
-    .split_layout img {
-        grid-column: 1; /* Image in the first column */
-        width: 100%;
-        height: auto;
-    }
-
-    .split_layout p {
-        grid-column: 2; /* Text and button in the second column */
-        text-align: left;
-        padding: 16px;
-    }
-
-    .split_layout button {
-        grid-column: 2; /* Text and button in the second column */
-        text-align: left;
-        padding: 16px;
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout for tablets */
     }
 }
 
+@media (min-width: 1024px) {
+    ul li {
+        padding: 16px;
+    }
 
+    main {
+        gap: 32px; /* Increase spacing for desktop */
+    }
+
+    .movie_container {
+        box-shadow: 16px 16px #070410;
+    }
+}
